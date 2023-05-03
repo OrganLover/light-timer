@@ -30,11 +30,12 @@ inputEl.addEventListener('input', () => {
 
 buttonEl.addEventListener('click', () => {
   const seconds = Number(inputEl.value);
-  console.log(seconds)
+  inputEl.value = '';
+  if (!seconds) {
+    return
+  }
 
   animateTimer(seconds);
-
-  inputEl.value = '';
 });
 
 function getTimeBySeconds(seconds) {
